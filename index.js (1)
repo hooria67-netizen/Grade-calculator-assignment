@@ -1,0 +1,57 @@
+function calculateGrade() {
+  const percentInput = document.getElementById("percentage").value;
+    const resultBox = document.getElementById("result-box");
+    const resultText = document.getElementById("result-text");
+
+
+    resultBox.className = "result-pill";
+
+    
+    if (percentInput.trim() === "") {
+        resultBox.classList.add("alert-error");
+        resultText.innerHTML = "⚠️ Please enter your percentage";
+        return;
+    }
+
+    const percentage = parseFloat(percentInput);
+
+    
+    if (percentage < 0 || percentage > 100) {
+        resultBox.classList.add("alert-error");
+        resultText.innerHTML = "❌ Invalid Number";
+    } 
+
+    else if (percentage >= 90 && percentage <= 100) {
+        resultBox.classList.add("grade-aplus");
+        resultText.innerHTML = `🌟 Outstanding Rank:
+        <strong>A+</strong> (${percentage}%)`;
+    } 
+    else if (percentage >= 80 && percentage <= 89.99) {
+        resultBox.classList.add("grade-a");
+        resultText.innerHTML = ` Excellent Achievement✨<br> <strong>A:</strong> (${percentage}%)`;
+    } 
+    else if (percentage >= 70 && percentage <= 79.99) {
+        resultBox.classList.add("grade-b");
+        resultText.innerHTML =`Well Done👏🏻:<br>
+        <strong>B</strong> (${percentage}%)`;
+    } 
+    else if (percentage >= 60 && percentage <= 69.99) {
+        resultBox.classList.add("grade-c");
+        resultText.innerHTML = ` Good 👍🏻: <br><strong>C</strong> (${percentage}%)`;
+    } 
+    else if (percentage >= 40 && percentage <= 59.99) {
+        resultBox.classList.add("grade-d");
+        resultText.innerHTML = ` Passed 📝: <strong>D</strong> (${percentage}%)`;
+    } 
+    else {
+        resultBox.classList.add("grade-fail");
+        resultText.innerHTML = `🛑 Evaluation: <strong>Fail</strong> (${percentage}%)`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById("check-btn");
+    if(btn) {
+        btn.addEventListener("click", calculateGrade);
+    }
+});

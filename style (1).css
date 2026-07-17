@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body {
+    background: radial-gradient(circle at 10% 20%, #1a1c29 0%, #0d0e15 90%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+}
+.fluid-wrapper{
+    width: 100%;
+    max-width: 430px;
+    position: relative;
+}
+
+.Grade-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 60px 20px 70px 30px; 
+    
+    padding: 50px 35px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.Grade-card:hover {
+    border-radius: 30px 70px 20px 60px; 
+}
+
+.brand-badge {
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    background: linear-gradient(135deg, #ff007a 0%, #7928ca 100%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 0, 122, 0.4);
+}
+
+.card-header h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.card-header p {
+    color: #8a8f98;
+    font-size: 14px;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+.input-panel {
+    margin-bottom: 25px;
+}
+
+.capsule-input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.capsule-input-field input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    
+    /* Pure Capsule Shape */
+    border-radius: 100px; 
+    
+    padding: 18px 70px 18px 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capsule-input-field input:focus {
+    outline: none;
+    border-color: #ff007a;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0 25px rgba(255, 0, 122, 0.25);
+}
+
+/* Circular Floating Indicator Icon */
+.unit-circle {
+    position: absolute;
+    right: 8px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Pill Shape Fluid Interactive Button */
+#check-btn {
+    width: 100%;
+    background: #ffffff;
+    color: #0d0e15;
+    border: none;
+    border-radius: 100px;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#check-btn:hover {
+    background: linear-gradient(135deg, #ff007a 0%, #7928ca 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(121, 40, 202, 0.35);
+}
+
+/* Dynamic Capsule Result Alerts */
+.result-pill {
+    margin-top: 25px;
+    padding: 16px 24px;
+    border-radius: 100px; /* Keeps the round pill aesthetic consistency */
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hide {
+    display: none;
+}
+
+/* Individual Color Metric Tiers (Neon Gradients on Dark Borders) */
+.alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.grade-aplus, .grade-a {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #a7f3d0;
+}
+
+.grade-b {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fde68a;
+}
+
+.grade-c {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #fed7aa;
+}
+
+.grade-d {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #bfdbfe;
+}
+
+.grade-fail {
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    color: #fca5a5;
+}
+
+@media (max-width: 480px) {
+    .Grade-card {
+        padding: 40px 22px;
+        border-radius: 45px 15px 55px 20px;
+    }
+    .card-header h2 {
+        font-size: 26px;
+    }
+}
